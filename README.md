@@ -1,9 +1,10 @@
-##To initialize the project, remember to run the following first:
--npm install
-##Then run the project with:
--npm run dev
+# Project GreenAura React + Vite
 
-# React + Vite
+## To initialize the project, remember to run the following first:
+- npm install
+## Then run the project with:
+- npm run dev
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
