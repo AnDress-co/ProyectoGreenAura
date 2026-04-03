@@ -4,5 +4,3 @@
 - npm install
 ## Then run the project with:
 - npm run dev
-
-## Next coment in proyect
