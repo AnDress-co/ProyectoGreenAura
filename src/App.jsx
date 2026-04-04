@@ -1,11 +1,11 @@
-import Dashboard from "./pages/Dashboard"
+import { BrowserRouter } from 'react-router-dom'
+import AppRouter from './routes/AppRouter'
 
-function App() {  
-
+function App() {
   return (
-    <>
-      <Dashboard />
-    </>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   )
 }
 
