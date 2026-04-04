@@ -1,12 +1,14 @@
 import { Routes, Route } from 'react-router-dom'
-import Dashboard from '../pages/Dashboard'
-import NuestraFilosofia from '../pages/NuestraFilosofia'
+import Home from '../pages/Home'
+import OurPhilosophy from '../pages/OurPhilosophy'
 
 const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/nuestra-filosofia" element={<NuestraFilosofia />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/our-philosophy" element={<OurPhilosophy />} />
+      /* Ruta para manejar error HTTP 404 */
+      <Route path="*" element={<div>HTTP 404: Página no encontrada.</div>} />
     </Routes>
   )
 }

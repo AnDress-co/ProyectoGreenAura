@@ -1,5 +1,10 @@
 .navbar-custom {
-    background-color: #F0F0D5; /* Un verde bosque, por ejemplo */
+    background-color: #F0F0D5;
+}
+
+.text-font { /*Tipo de fuente para titulos*/
+  color: #C5A059;
+  font-family: Georgia, serif; 
 }
 
 /*Nuestra Filosofía*/
