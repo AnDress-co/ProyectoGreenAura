@@ -5,7 +5,7 @@ import Logo from '../assets/logo.png'
 
 const Navbar = () => {
   return (    
-    <nav className="navbar navbar-expand-lg navbar-custom p-0">
+    <nav className="navbar navbar-expand-lg color-custom p-0">
       <div className="container-fluid">
         <h1 className="text-font fs-1">GreenAura
           <img src={Logo} style={{maxWidth: '50px'}} className='img-fluid' alt="Logo" />
