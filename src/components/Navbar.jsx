@@ -1,23 +1,30 @@
 import { Link } from 'react-router-dom'
+import { CircleUserRound } from 'lucide-react'
+
+import Logo from '../assets/logo.png'
 
 const Navbar = () => {
   return (    
-    <nav className="navbar navbar-expand-lg navbar-custom">
+    <nav className="navbar navbar-expand-lg color-custom p-0">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">GreenAura</Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <h1 className="text-font fs-1">GreenAura
+          <img src={Logo} style={{maxWidth: '50px'}} className='img-fluid' alt="Logo" />
+        </h1>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse d-flex justify-content-center" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
+        <div className="collapse navbar-collapse fw-medium" id="navbarNav">
+          <div className='navbar-nav mx-md-auto'>
             <Link className="nav-link" to="/">Inicio</Link>
-            <Link className="nav-link" to="/nuestra-filosofia">Nuestra Filosofía</Link>
-            <Link className="nav-link" to="/novedades">Novedades</Link>
+            <Link className="nav-link" to="/our-philosophy">Nuestra Filosofía</Link>
+            <Link className="nav-link" to="/promotions">Promociones</Link>
           </div>
-        </div>
-        <div>
-          <button type="button" className="btn btn-success">Prueba</button>
-        </div>
+          <div className='navbar-nav'>
+            <Link className='nav-link d-flex align-items-center' to="/login">
+              <CircleUserRound className='me-1' /> Iniciar Sesion
+            </Link>
+          </div>          
+        </div>        
       </div>
     </nav>     
   )

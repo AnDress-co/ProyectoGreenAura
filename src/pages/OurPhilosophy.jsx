@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar"
 
-const NuestraFilosofia = () => {
+const OurPhilosophy = () => {
   return (
     <>
       <Navbar />
@@ -65,4 +65,4 @@ const NuestraFilosofia = () => {
   )
 }
 
-export default NuestraFilosofia
+export default OurPhilosophy
