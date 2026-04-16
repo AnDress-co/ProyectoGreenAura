@@ -1,10 +1,30 @@
-.color-custom {
-    background-color: #F0F0D5;
-}
-
 .text-font { /*Tipo de fuente para titulos*/
   color: #C5A059;
   font-family: Georgia, serif; 
+}
+
+.custom-button {
+  background-color: #C5A059;
+  color: #304D27;
+  font-family: Georgia, serif;  
+}
+
+/*Navbar*/
+.color-navbar {
+    background-color: #F0F0D5;
+}
+
+/*Login*/
+.background-login {
+  background-image: url('./backgrounds/backgroundLogin.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.color-login {
+  background-color: #304D27;
 }
 
 /*Nuestra Filosofía*/

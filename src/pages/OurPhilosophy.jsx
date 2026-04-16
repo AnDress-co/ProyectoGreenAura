@@ -5,7 +5,7 @@ const OurPhilosophy = () => {
     <>
       <Navbar />
       <div className="filosofia-wrapper">
-        <div className="filosofia-card">
+        <div className="filosofia-card mt-5">
 
           {/* Título principal */}
           <h1 className="filosofia-titulo">Nuestra Filosofía</h1>
