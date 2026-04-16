@@ -6,9 +6,9 @@ const OurPhilosophy = () => {
     <>
       <Navbar />
       <div className="filosofia-wrapper d-flex align-items-center justify-content-center py-5">
-        <div className="filosofia-card container p-5">
+        <div className="filosofia-card container mt-5">
 
-          <h1 className="filosofia-titulo text-center mb-4">Nuestra Filosofía</h1>
+          <h1 className="filosofia-titulo text-center mb-4 mt-5">Nuestra Filosofía</h1>
 
           <div className="text-center mb-5">
             <h2 className="filosofia-subtitulo mb-3">Filosofía Corporativa: "Sinergia Vital"</h2>
