@@ -19,7 +19,7 @@ const Login = () => {
     try {
       const credential = await signInWithEmailAndPassword(auth, email, password)
       console.log("Usuario logueado: " + credential.user)
-      navigate('/')
+      navigate('/dashboard')
     } catch (err) {      
       setError('Credenciales incorrectas.')
       console.log(err)
