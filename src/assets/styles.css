@@ -16,7 +16,7 @@
 
 /*Login*/
 .background-login {
-  background-image: url('./backgrounds/backgroundLogin.png');
+  background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776484627/backgroundLogin_smsdap.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -30,7 +30,7 @@
 /*Nuestra Filosofía*/
 .filosofia-wrapper {
   min-height: 100vh;
-  background-image: url('../assets/Fondo-N-Filsofia.png');
+  background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776485466/BackGroundPhilosophy_zho6cr.png');
   background-size: cover;
   background-position: center;
 }
