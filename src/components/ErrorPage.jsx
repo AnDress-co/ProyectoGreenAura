@@ -1,13 +1,11 @@
 import { Link } from 'react-router-dom'
 
-import CartoonBug from '../assets/cartoonBug.png'
-
 const ErrorPage = ({code, title, description}) => {
   return (
     <>    
       <div className='d-flex justify-content-center mt-5'>
         <div className='ms-5'>
-          <img src={CartoonBug} alt="Cartoon" />
+          <img src={'https://res.cloudinary.com/dqf8a6brf/image/upload/v1776484638/cartoonBug_offcu4.png'} alt="Cartoon" />
         </div>
         <div className='align-self-center me-5'>
           <h1 className='text-font fw-bold'>ERROR: {code}</h1>
