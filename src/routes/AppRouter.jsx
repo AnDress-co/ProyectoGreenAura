@@ -4,6 +4,7 @@ import Home from '../pages/Home'
 import OurPhilosophy from '../pages/OurPhilosophy'
 import Login from '../pages/Login'
 import ErrorPage from '../components/ErrorPage'
+import WhatsNew from '../pages/WhatsNew'
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,7 @@ const AppRouter = () => {
           description="Debes de haber escogido la puerta incorrecta, ya que no he podido encontrar la página que buscas."
         />}
       />
+      <Route path='/whats-new' element = {<WhatsNew/>}/>
     </Routes>
   )
 }

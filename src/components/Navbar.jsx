@@ -17,7 +17,7 @@ const Navbar = () => {
           <div className='navbar-nav mx-md-auto'>
             <Link className="nav-link" to="/">Inicio</Link>
             <Link className="nav-link" to="/our-philosophy">Nuestra Filosofía</Link>
-            <Link className="nav-link" to="/promotions">Promociones</Link>
+            <Link className="nav-link" to="/whats-new">Promociones</Link>
           </div>
           <div className='navbar-nav'>
             <Link className='nav-link d-flex align-items-center' to="/login">
