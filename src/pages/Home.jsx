@@ -1,14 +1,15 @@
 import Navbar from "../components/Navbar"
 
-const Dashboard = () => {
+const Home = () => {
   return (
     <>
       <Navbar />
       <div className="container text-center">
-        <h1>GreenAura</h1>
+        <h1>Home</h1>
+        <p>Aqui van los productos que se le dara promoción</p>
       </div>      
     </>
   )
 }
 
-export default Dashboard
+export default Home

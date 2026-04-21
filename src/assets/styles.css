@@ -1,3 +1,82 @@
-.navbar-custom {
-    background-color: #F0F0D5; /* Un verde bosque, por ejemplo */
+.text-font { /*Tipo de fuente para titulos*/
+  color: #C5A059;
+  font-family: Georgia, serif; 
+}
+
+.custom-button {
+  background-color: #C5A059;
+  color: #304D27;
+  font-family: Georgia, serif;  
+}
+
+/*Navbar*/
+.color-navbar {
+    background-color: #F0F0D5;
+}
+
+/*Login*/
+.background-login {
+  background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776484627/backgroundLogin_smsdap.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.color-login {
+  background-color: #304D27;
+}
+
+/*Nuestra Filosofía*/
+.filosofia-wrapper {
+  min-height: 100vh;
+  background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776485466/BackGroundPhilosophy_zho6cr.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.filosofia-card {
+  background-color: rgba(30, 70, 32, 0.88);
+  border: 1px solid #C5A059;
+  border-radius: 16px;
+  color: #F5F5DC;
+}
+
+.filosofia-titulo {
+  font-size: 2.8rem;
+  color: #C5A059;
+  font-family: Georgia, serif;
+}
+
+.filosofia-subtitulo {
+  font-size: 1.5rem;
+  color: #C5A059;
+  font-family: Georgia, serif;
+}
+
+.filosofia-descripcion {
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+.pilar-card {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid #C5A059;
+  border-radius: 12px;
+}
+
+.pilar-titulo {
+  color: #C5A059;
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+}
+
+.pilar-icono {
+  font-size: 1.5rem;
+}
+
+.mv-titulo {
+  color: #C5A059;
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
 }
