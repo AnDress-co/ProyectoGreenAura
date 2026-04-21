@@ -12,6 +12,7 @@ const AppRouter = () => {
       <Route path="/" element={<Home />} />
       <Route path="/our-philosophy" element={<OurPhilosophy />} />
       <Route path='/login' element={<Login />} />
+      <Route path='/promotions' element = {<WhatsNew/>}/>
       {/* Ruta para manejar error HTTP 404 */}
       <Route path="*" element=
         {<ErrorPage 
@@ -19,8 +20,7 @@ const AppRouter = () => {
           title="la pagina no se ha encontrado"
           description="Debes de haber escogido la puerta incorrecta, ya que no he podido encontrar la página que buscas."
         />}
-      />
-      <Route path='/whats-new' element = {<WhatsNew/>}/>
+      />      
     </Routes>
   )
 }
