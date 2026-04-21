@@ -2,16 +2,16 @@
 .whatsnew-background{
   position: relative;
   min-height: 100vh;  
-  background-image: url("./backgrounds/backgroundWhatsNew.png");
+  background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776814533/backgroundWhatsNew_zpueod.png');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .whatsnew-background::before{
   content: "";
   position: absolute;
   inset: 0;
-
   background: rgba(0,0,0,0.5);
 }
 
