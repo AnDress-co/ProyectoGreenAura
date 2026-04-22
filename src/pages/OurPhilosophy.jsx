@@ -5,14 +5,14 @@ const OurPhilosophy = () => {
   return (
     <>
       <Navbar />
-      <div className="filosofia-wrapper d-flex align-items-center justify-content-center py-5">
-        <div className="filosofia-card container mt-5">
+      <div className="general-background d-flex align-items-center justify-content-center py-5">
+        <div className="philosophy-card container mt-5">
 
-          <h1 className="filosofia-titulo text-center mb-4 mt-5">Nuestra Filosofía</h1>
+          <h1 className="philosophy-title text-center mb-4 mt-5">Nuestra Filosofía</h1>
 
           <div className="text-center mb-5">
-            <h2 className="filosofia-subtitulo mb-3">Filosofía Corporativa: "Sinergia Vital"</h2>
-            <p className="filosofia-descripcion mx-auto">
+            <h2 className="philosophy-subtitle mb-3">Filosofía Corporativa: "Sinergia Vital"</h2>
+            <p className="philosophy-description mx-auto">
               El bienestar humano en armonía integrada, punto de reunión entre la ciencia y la naturaleza.
             </p>
           </div>
@@ -22,9 +22,9 @@ const OurPhilosophy = () => {
               <div className="pilar-card h-100 p-4">
                 <div className="d-flex align-items-center gap-2 mb-3">
                   <Link size={24} color="#C5A059" />
-                  <h3 className="pilar-titulo m-0">1. Evolución Consciente</h3>
+                  <h3 className="pilar-title m-0">1. Evolución Consciente</h3>
                 </div>
-                <p className="pilar-texto m-0">Ecosistemas de salud que integran el bienestar humano de manera integral y sostenible.</p>
+                <p className="m-0">Ecosistemas de salud que integran el bienestar humano de manera integral y sostenible.</p>
               </div>
             </div>
 
@@ -32,9 +32,9 @@ const OurPhilosophy = () => {
               <div className="pilar-card h-100 p-4">
                 <div className="d-flex align-items-center gap-2 mb-3">
                   <Sprout size={24} color="#C5A059" />
-                  <h3 className="pilar-titulo m-0">2. Ética de la Tierra</h3>
+                  <h3 className="pilar-title m-0">2. Ética de la Tierra</h3>
                 </div>
-                <p className="pilar-texto m-0">Fuente de fuerza sostenible, comprometida con la naturaleza y el bienestar colectivo.</p>
+                <p className="m-0">Fuente de fuerza sostenible, comprometida con la naturaleza y el bienestar colectivo.</p>
               </div>
             </div>
 
@@ -42,9 +42,9 @@ const OurPhilosophy = () => {
               <div className="pilar-card h-100 p-4">
                 <div className="d-flex align-items-center gap-2 mb-3">
                   <ShieldPlus size={24} color="#C5A059" />
-                  <h3 className="pilar-titulo m-0">3. Excelencia en la Mediación</h3>
+                  <h3 className="pilar-title m-0">3. Excelencia en la Mediación</h3>
                 </div>
-                <p className="pilar-texto m-0">Confianza en cada proceso, garantizando calidad y transparencia en todo momento.</p>
+                <p className="m-0">Confianza en cada proceso, garantizando calidad y transparencia en todo momento.</p>
               </div>
             </div>
           </div>

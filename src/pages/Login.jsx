@@ -35,7 +35,7 @@ const Login = () => {
             <form className='card-body text-white' onSubmit={handleLogin}>
               <p className='text-center text-font fs-4'>INICIAR SESION</p>
               <div className="mb-3">
-                <label htmlFor="email" className="form-label"><CircleUserRound /> Usuairo</label>
+                <label htmlFor="email" className="form-label"><CircleUserRound /> Usuario</label>
                 <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} aria-describedby="emailHelp" />
               </div>
               <div className="mb-3">

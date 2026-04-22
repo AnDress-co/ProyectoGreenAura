@@ -5,9 +5,7 @@ const WhatsNew = () => {
   return (
     <>
       <Navbar />
-      <div className="whatsnew-background mt-5">
-        <div className="d-flex flex-wrap justify-content-center"></div>
-
+      <div className="general-background py-5">        
         <div className="container-fluid mt-4 d-flex flex-wrap justify-content-center gap-0.5">
           <ProductCard
             title="Resina de Shilajit Himalaya"

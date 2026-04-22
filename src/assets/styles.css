@@ -1,26 +1,6 @@
-/*WhatsNew*/
-.whatsnew-background{
-  position: relative;
-  min-height: 100vh;  
-  background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776814533/backgroundWhatsNew_zpueod.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-.whatsnew-background::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-}
-
-.whatsnew-background > *{
-  position: relative;
-  z-index: 1;
-}
-
-.text-font { /*Tipo de fuente para titulos*/
+/*GENERAL*/
+/*Tipo de fuente para titulos*/
+.text-font { 
   color: #C5A059;
   font-family: Georgia, serif; 
 }
@@ -29,6 +9,15 @@
   background-color: #C5A059;
   color: #304D27;
   font-family: Georgia, serif;  
+}
+
+.general-background{
+  position: relative;
+  min-height: 100vh;  
+  background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776816236/BackgroudHome_pwskil.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /*Navbar*/
@@ -42,6 +31,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100vh;
 }
 
@@ -50,51 +40,40 @@
 }
 
 /*Nuestra Filosofía*/
-.filosofia-wrapper {
-  min-height: 100vh;
-  background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776485466/BackGroundPhilosophy_zho6cr.png');
-  background-size: cover;
-  background-position: center;
-}
 
-.filosofia-card {
+.philosophy-card {
   background-color: rgba(30, 70, 32, 0.88);
-  border: 1px solid #C5A059;
+  border: 2px solid #C5A059;
   border-radius: 16px;
   color: #F5F5DC;
 }
 
-.filosofia-titulo {
+.philosophy-title {
   font-size: 2.8rem;
   color: #C5A059;
   font-family: Georgia, serif;
 }
 
-.filosofia-subtitulo {
+.philosophy-subtitle {
   font-size: 1.5rem;
   color: #C5A059;
   font-family: Georgia, serif;
 }
 
-.filosofia-descripcion {
+.philosophy-description {
   max-width: 700px;
   line-height: 1.7;
 }
 
-.pilar-card {
-  background-color: rgba(255, 255, 255, 0.07);
-  border: 1px solid #C5A059;
+.pilar-card {  
+  border: 2px solid #C5A059;
   border-radius: 12px;
 }
 
-.pilar-titulo {
+.pilar-title {
   color: #C5A059;
   font-family: Georgia, serif;
   font-size: 1.1rem;
-}
-
-.pilar-icono {
-  font-size: 1.5rem;
 }
 
 .mv-titulo {
@@ -102,3 +81,5 @@
   font-family: Georgia, serif;
   font-size: 1.2rem;
 }
+
+/*Home*/

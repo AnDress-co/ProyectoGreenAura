@@ -1,11 +1,11 @@
 const ProductCard = ({ title, description, discount, image, width }) => {
   return (
     <div
-      className="card m-3 p-3 shadow position-relative navbar-custom"
+      className="card m-3 p-3 shadow position-relative navbar-custom pilar-card"
       style={{ width: width }}
     >
       {/* Badge descuento */}
-      <span className="badge bg-success position-absolute top-0 end-0 m-2">
+      <span className="badge bg-danger position-absolute top-0 end-0 m-2 fs-5">
         {discount}
       </span>
 
