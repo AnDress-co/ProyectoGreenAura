@@ -1,3 +1,19 @@
+/*Products*/
+.product-link{
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card{
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover{
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
 /*WhatsNew*/
 .whatsnew-background{
   position: relative;
