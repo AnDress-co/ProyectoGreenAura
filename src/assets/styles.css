@@ -1,42 +1,54 @@
-/*WhatsNew*/
-.whatsnew-background{
+/* Variables GreenAura */
+:root {
+  --color-dorado: #C5A059;
+  --color-crema: #F5F5DC;
+  --color-verde: #304D27;
+  --font-serif: Georgia, serif;
+}
+
+/*  Navbar */
+.color-navbar {
+  background-color: #F0F0D5;
+}
+
+/*  Tipografía */
+.text-font {
+  color: var(--color-dorado);
+  font-family: var(--font-serif);
+}
+
+.custom-button {
+  background-color: var(--color-dorado);
+  color: var(--color-verde);
+  font-family: var(--font-serif);
+}
+
+/* Fondo con desenfoque reutilizable */
+.bg-blur-wrapper {
   position: relative;
-  min-height: 100vh;  
-  background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776814533/backgroundWhatsNew_zpueod.png');
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-.whatsnew-background::before{
-  content: "";
+.bg-blur-wrapper::before {
+  content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  z-index: 0;
 }
 
-.whatsnew-background > *{
+.bg-blur-wrapper > * {
   position: relative;
   z-index: 1;
 }
 
-.text-font { /*Tipo de fuente para titulos*/
-  color: #C5A059;
-  font-family: Georgia, serif; 
-}
-
-.custom-button {
-  background-color: #C5A059;
-  color: #304D27;
-  font-family: Georgia, serif;  
-}
-
-/*Navbar*/
-.color-navbar {
-    background-color: #F0F0D5;
-}
-
-/*Login*/
+/* Login */
 .background-login {
   background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776484627/backgroundLogin_smsdap.png');
   background-size: cover;
@@ -46,35 +58,29 @@
 }
 
 .color-login {
-  background-color: #304D27;
+  background-color: var(--color-verde);
 }
 
-/*Nuestra Filosofía*/
-.filosofia-wrapper {
-  min-height: 100vh;
-  background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776485466/BackGroundPhilosophy_zho6cr.png');
-  background-size: cover;
-  background-position: center;
-}
-
+/* Nuestra Filosofía */
 .filosofia-card {
   background-color: rgba(30, 70, 32, 0.88);
-  border: 1px solid #C5A059;
+  border: 1px solid var(--color-dorado);
   border-radius: 16px;
-  color: #F5F5DC;
+  color: var(--color-crema);
 }
 
-.filosofia-titulo {
-  font-size: 2.8rem;
-  color: #C5A059;
-  font-family: Georgia, serif;
+.filosofia-titulo,
+.filosofia-subtitulo,
+.pilar-titulo,
+.mv-titulo {
+  color: var(--color-dorado);
+  font-family: var(--font-serif);
 }
 
-.filosofia-subtitulo {
-  font-size: 1.5rem;
-  color: #C5A059;
-  font-family: Georgia, serif;
-}
+.filosofia-titulo { font-size: 2.8rem; }
+.filosofia-subtitulo { font-size: 1.5rem; }
+.pilar-titulo { font-size: 1.1rem; }
+.mv-titulo { font-size: 1.2rem; }
 
 .filosofia-descripcion {
   max-width: 700px;
@@ -83,22 +89,15 @@
 
 .pilar-card {
   background-color: rgba(255, 255, 255, 0.07);
-  border: 1px solid #C5A059;
+  border: 1px solid var(--color-dorado);
   border-radius: 12px;
 }
 
-.pilar-titulo {
-  color: #C5A059;
-  font-family: Georgia, serif;
-  font-size: 1.1rem;
-}
-
-.pilar-icono {
-  font-size: 1.5rem;
-}
-
-.mv-titulo {
-  color: #C5A059;
-  font-family: Georgia, serif;
-  font-size: 1.2rem;
-}
+/* WhatsNew 
+.whatsnew-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+} */
+ 

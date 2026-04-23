@@ -1,13 +1,14 @@
 import Navbar from "../components/Navbar";
 import ProductCard from "../components/ProductCard";
+import PageTransition from "../components/PageTransition";
 
 const WhatsNew = () => {
   return (
-    <>
+    <PageTransition>
       <Navbar />
-      <div className="whatsnew-background mt-5">
-        <div className="d-flex flex-wrap justify-content-center"></div>
-
+      <div className="bg-blur-wrapper"
+        style={{ backgroundImage: "url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776814533/backgroundWhatsNew_zpueod.png')" }}>
+        <div className="container-fluid pt-4 mt-4 d-flex flex-wrap justify-content-center gap-3"></div>
         <div className="container-fluid mt-4 d-flex flex-wrap justify-content-center gap-0.5">
           <ProductCard
             title="Resina de Shilajit Himalaya"
@@ -42,7 +43,7 @@ const WhatsNew = () => {
           />
         </div>
       </div>
-    </>
+    </PageTransition>
   );
 };
 
