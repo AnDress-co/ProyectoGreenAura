@@ -54,6 +54,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100vh;
 }
 
@@ -82,7 +83,7 @@
 .pilar-titulo { font-size: 1.1rem; }
 .mv-titulo { font-size: 1.2rem; }
 
-.filosofia-descripcion {
+.philosophy-description {
   max-width: 700px;
   line-height: 1.7;
 }
