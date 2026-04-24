@@ -5,7 +5,7 @@ const ErrorPage = ({code, title, description}) => {
     <>    
       <div className='d-flex justify-content-center mt-5'>
         <div className='ms-5'>
-          <img src={'https://res.cloudinary.com/dqf8a6brf/image/upload/v1776484638/cartoonBug_offcu4.png'} alt="Cartoon" />
+          <img src={' onBug_offcu4.png'} alt="Cartoon" />
         </div>
         <div className='align-self-center me-5'>
           <h1 className='text-font fw-bold'>ERROR: {code}</h1>
