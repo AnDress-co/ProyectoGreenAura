@@ -14,9 +14,6 @@
   box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
 
-/*WhatsNew*/
-.whatsnew-background{
-/* Variables GreenAura */
 :root {
   --color-dorado: #C5A059;
   --color-crema: #F5F5DC;
@@ -26,7 +23,7 @@
 
 /*  Navbar */
 .color-navbar {
-  background-color: #F0F0D5;
+  background-color: var(--color-crema);
 }
 
 /*  Tipografía */
@@ -111,12 +108,3 @@
   border: 1px solid var(--color-dorado);
   border-radius: 12px;
 }
-
-/* WhatsNew 
-.whatsnew-background::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-} */
- 
