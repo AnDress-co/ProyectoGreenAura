@@ -1,3 +1,4 @@
+import { AnimatePresence} from 'framer-motion'
 import { Routes, Route } from 'react-router-dom'
 import { ProtectedRoute } from './ProtectedRoute'
 import { AuthProvider } from '../context/AuthContext'
@@ -11,6 +12,8 @@ import Dashboard from '../pages/Dashboard'
 
 
 const AppRouter = () => {
+  const location = useLocation()
+
   return (
     <AuthProvider>
       <Routes>

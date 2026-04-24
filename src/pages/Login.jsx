@@ -3,9 +3,9 @@ import { CircleUserRound, LockKeyhole } from 'lucide-react'
 import { useState } from 'react'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../services/firebase'
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import PageTransition from '../components/PageTransition'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -26,13 +26,13 @@ const Login = () => {
   }
 
   return (
-    <>
-      < Navbar />
+    <PageTransition>
+      <Navbar />
       <div className='pt-5 background-login'>
         <div className='pt-5 d-flex justify-content-center'>
           <div className='card color-login mt-5' style={{width: '20rem'}}>
             <form className='card-body text-white' onSubmit={handleLogin}>
-              <p className='text-center text-font fs-4'>INICIAR SESION</p>
+              <p className='text-center text-font fs-4'>INICIAR SESIÓN</p>
               <div className="mb-3">
                 <label htmlFor="email" className="form-label"><CircleUserRound /> Usuario</label>
                 <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} aria-describedby="emailHelp" />
@@ -46,13 +46,13 @@ const Login = () => {
                 <Link className='text-light' to="/recover-password">¿Olvidaste tu contraseña?</Link>
               </div>              
               <div className='pt-4 text-center'>
-                <button type="submit" className="btn custom-button">INICIAR SESION</button>
+                <button type="submit" className="btn custom-button">INICIAR SESIÓN</button>
               </div>
             </form>
           </div> 
         </div>
       </div>      
-    </> 
+    </PageTransition> 
   )
 }
 

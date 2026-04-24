@@ -1,12 +1,16 @@
 import Navbar from "../components/Navbar"
+import PageTransition from "../components/PageTransition"
 import { Link, Sprout, ShieldPlus, Rocket, Telescope } from "lucide-react"
 
 const OurPhilosophy = () => {
   return (
-    <>
+    <PageTransition>
       <Navbar />
-      <div className="general-background d-flex align-items-center justify-content-center py-5">
-        <div className="philosophy-card container mt-5">
+      <div 
+        className="bg-blur-wrapper d-flex align-items-center justify-content-center py-5"
+        style={{ backgroundImage: "url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776485466/BackGroundPhilosophy_zho6cr.png')" }}
+      >
+        <div className="filosofia-card container p-5 mt-5">
 
           <h1 className="philosophy-title text-center mb-4 mt-5">Nuestra Filosofía</h1>
 
@@ -52,7 +56,7 @@ const OurPhilosophy = () => {
           {/* Misión y Visión */}
           <div className="row g-4 mt-2">
             <div className="col-md-6">
-              <div className="d-flex aling-items-center gap-2 mb-2">
+              <div className="d-flex align-items-center gap-2 mb-2">
                 <Rocket size={24} color="#C5A059" />
                 <h3 className="mv-titulo m-0">1.3. Misión</h3>
               </div>
@@ -63,7 +67,7 @@ const OurPhilosophy = () => {
               </p>
             </div>
             <div className="col-md-6">
-              <div className="d-flex aling-items-center gap-2 mb-2">
+              <div className="d-flex align-items-center gap-2 mb-2">
                 <Telescope size={24} color="#C5A059" />
                 <h3 className="mv-titulo m-0">1.4. Visión</h3>
               </div>
@@ -77,7 +81,7 @@ const OurPhilosophy = () => {
 
         </div>
       </div>
-    </>
+    </PageTransition>
   )
 }
 
