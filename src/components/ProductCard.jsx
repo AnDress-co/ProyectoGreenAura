@@ -8,7 +8,7 @@ const ProductCard = ({ title, description, discount, image, width, link }) => {
         style={{ width: width }}
       >
         {/* Badge descuento */}
-        <span className="badge bg-success position-absolute top-0 end-0 m-2">
+        <span className="badge bg-danger position-absolute top-0 end-0 m-2 fs-5">
           {discount}
         </span>
 

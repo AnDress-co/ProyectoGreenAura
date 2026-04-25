@@ -8,7 +8,7 @@ const WhatsNew = () => {
         <>
             <Navbar />
             {/*Este div coloca la imagen como brackground de todo*/}
-            <div className="whatsnew-background mt-5">
+            <div className="general-background mt-5">
 
                 <div className="d-flex flex-wrap justify-content-center"></div>
                 {/*Contenedor de los productos*/}

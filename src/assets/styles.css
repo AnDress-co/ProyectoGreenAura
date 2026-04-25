@@ -42,9 +42,6 @@
 .bg-blur-wrapper {
   position: relative;
   min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
 .bg-blur-wrapper::before {
@@ -54,7 +51,7 @@
   background-image: inherit;
   background-size: cover;
   background-position: center;
-  filter: blur(4px);
+  filter: blur(2px);
   z-index: 0;
 }
 
@@ -73,30 +70,54 @@
   height: 100vh;
 }
 
+
+.general-background{
+  position: relative;
+  min-height: 100vh;  
+  background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776816236/BackgroudHome_pwskil.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;  
+}
+
+.background-login::before,
+.general-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+
+.background-login > *,
+.general-background > * {
+  position: relative;
+  z-index: 1;
+}
+
 .color-login {
   background-color: var(--color-verde);
 }
 
 /* Nuestra Filosofía */
-.filosofia-card {
+.philosophy-card {
   background-color: rgba(30, 70, 32, 0.88);
   border: 1px solid var(--color-dorado);
   border-radius: 16px;
   color: var(--color-crema);
 }
 
-.filosofia-titulo,
-.filosofia-subtitulo,
-.pilar-titulo,
-.mv-titulo {
+.philosophy-title,
+.philosophy-subtitle,
+.pilar-title,
+.mv-title {
   color: var(--color-dorado);
   font-family: var(--font-serif);
 }
-
-.filosofia-titulo { font-size: 2.8rem; }
-.filosofia-subtitulo { font-size: 1.5rem; }
-.pilar-titulo { font-size: 1.1rem; }
-.mv-titulo { font-size: 1.2rem; }
 
 .philosophy-description {
   max-width: 700px;
