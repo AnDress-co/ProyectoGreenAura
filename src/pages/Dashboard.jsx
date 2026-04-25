@@ -1,23 +1,22 @@
-import React from 'react'
-
+import Navbar from '../components/Navbar';
 import { signOut } from "firebase/auth";
 import { auth } from "../services/firebase";
-import { useNavigate } from "react-router-dom";
 
 
-const Dashboard = () => {
-  const navigate = useNavigate();
+const Dashboard = () => {  
 
   const handleLogout = async () => {
-    await signOut(auth);
-    navigate("/login");
+    await signOut(auth);    
   };
 
   return (
-    <div className='text-center'>
-      <h1>Welcome Admin</h1>
-      <button onClick={handleLogout}>Cerrar Sesion</button>
-    </div>
+    <>
+      <Navbar />
+      <div className='py-5 general-background text-center'>
+        <h1 className='mt-5'>Welcome Admin Dashboard</h1>
+        <button className='btn btn-danger' onClick={handleLogout}>Cerrar Sesion</button>
+      </div>
+    </>
   )
 }
 

@@ -10,11 +10,11 @@ const Navbar = () => {
   const navLinks = isLoggedIn ? [
     { to: '/dashboard', label: 'Panel'},
     { to: '/dashboard-products', label: 'Gestion de productos'},
-    { to: '/dashboard-promotions', label: 'Gestion de promociones'},
+    { to: '/dashboard-whats-new', label: 'Gestion de promociones'},
   ] : [
     { to: '/',               label: 'Inicio'           },
     { to: '/our-philosophy', label: 'Nuestra Filosofía' },
-    { to: '/promotions',     label: 'Promociones'       },
+    { to: '/whats-new',     label: 'Promociones'       },
   ]
 
   const rightLinks = isLoggedIn ? [
