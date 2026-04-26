@@ -4,7 +4,7 @@ const ProductCard = ({ title, description, discount, image, width, link }) => {
   return (
     <Link to={link} className="product-link">
       <div
-        className="card product-card m-3 p-3 shadow position-relative navbar-custom"
+        className="card product-card m-2 p-3 shadow position-relative navbar-custom"
         style={{ width: width }}
       >
         {/* Badge descuento */}
@@ -12,22 +12,16 @@ const ProductCard = ({ title, description, discount, image, width, link }) => {
           {discount}
         </span>
 
-        <div className="d-flex align-items-center">
-          <div className="p-3 flex-grow-1">
+        <div className="d-flex flex-column flex-lg-row align-items-center gap-3">
+          <div className="p-2 flex-grow-1 text-center text-lg-start order-2 order-lg-1">
             <h5>{title}</h5>
-            <p>{description}</p>
+            <p className="mb-0">{description}</p>
           </div>
 
           <img
             src={image}
             alt={title}
-            style={{
-              width: "260px",
-              height: "280px",
-              objectFit: "cover",
-              borderRadius: "10px",
-              marginRight: "10px",
-            }}
+            className="product-card-img order-1 order-lg-2"
           />
         </div>
       </div>
