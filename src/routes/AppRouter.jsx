@@ -6,6 +6,7 @@ import { AuthProvider } from '../context/AuthContext'
 import Home from '../pages/Home'
 import OurPhilosophy from '../pages/OurPhilosophy'
 import Login from '../pages/Login'
+import ForgotPassword from '../pages/ForgotPassword'
 import ErrorPage from '../components/ErrorPage'
 import WhatsNew from '../pages/WhatsNew'
 import Dashboard from '../pages/Dashboard'
@@ -21,6 +22,7 @@ const AppRouter = () => {
           <Route path="/" element={<Home />} />
           <Route path="/our-philosophy" element={<OurPhilosophy />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/whats-new' element={<WhatsNew />}/>
           <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>}/>
           <Route path='/dashboard-products' element={<ProtectedRoute><DashboardProducts /></ProtectedRoute>}/>

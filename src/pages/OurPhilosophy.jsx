@@ -1,10 +1,9 @@
 import Navbar from "../components/Navbar"
-import PageTransition from "../components/PageTransition"
 import { Link, Sprout, ShieldPlus, Rocket, Telescope } from "lucide-react"
 
 const OurPhilosophy = () => {
   return (
-    <PageTransition>
+    <>
       <Navbar />
       <div 
         className="general-background d-flex align-items-center justify-content-center py-5"        
@@ -80,7 +79,7 @@ const OurPhilosophy = () => {
 
         </div>
       </div>
-    </PageTransition>
+    </>
   )
 }
 
