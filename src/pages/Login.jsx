@@ -1,43 +1,43 @@
-import { Link } from "react-router-dom";
-import { Mail, LockKeyhole } from "lucide-react";
-import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../services/firebase";
-import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom"
+import { Mail, LockKeyhole } from "lucide-react"
+import { useState } from "react"
+import { signInWithEmailAndPassword } from "firebase/auth"
+import { auth } from "../services/firebase"
+import { useNavigate } from "react-router-dom"
+import Navbar from "../components/Navbar"
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
+  const navigate = useNavigate()
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      setError("");
-      navigate("/dashboard");
+      await signInWithEmailAndPassword(auth, email, password)
+      setError("")
+      navigate("/dashboard")
     } catch (err) {
-      let message = "Error al iniciar sesión.";
+      let message = "Error al iniciar sesión."
 
       switch (err.code) {
         case "auth/invalid-email":
-          message = "Correo inválido.";
+          message = "Correo inválido."
           break;
         case "auth/user-not-found":
-        case "auth/wrong-password":          
-          message = "Correo o contraseña incorrectos.";
+        case "auth/wrong-password":       
+          message = "Correo o contraseña incorrectos."
           break;
         case "auth/too-many-requests":
-          message = "Demasiados intentos. Intenta más tarde.";
+          message = "Demasiados intentos. Intenta más tarde."
           break;
         case "auth/user-disabled":
-          message = "Esta cuenta ha sido deshabilitada.";
+          message = "Esta cuenta ha sido deshabilitada."
           break;
         default:
-          message = "No se pudo iniciar sesión. Intenta nuevamente.";
+          message = "No se pudo iniciar sesión. Intenta nuevamente."
       }
       setError(message);
     }

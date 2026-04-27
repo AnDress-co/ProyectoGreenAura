@@ -1,41 +1,41 @@
-import Navbar from "../components/Navbar";
-import { ChevronsLeft, Mail } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
-import { sendPasswordResetEmail } from "firebase/auth";
-import { auth } from "../services/firebase";
-import { useState } from "react";
+import Navbar from "../components/Navbar"
+import { ChevronsLeft, Mail } from "lucide-react"
+import { Link, useNavigate } from "react-router-dom"
+import { sendPasswordResetEmail } from "firebase/auth"
+import { auth } from "../services/firebase"
+import { useState } from "react"
 
 const ForgotPassword = () => {
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [email, setEmail] = useState("")
+  const [error, setError] = useState("")
+  const navigate = useNavigate()
 
   const handleReset = async (e) => {
     e.preventDefault();
 
     try {
-      await sendPasswordResetEmail(auth, email);
-      setError("");
-      alert("Correo de recuperación enviado. Revisa tu bandeja de entrada o carpeta de spam.");
-      navigate("/login");
+      await sendPasswordResetEmail(auth, email)
+      setError("")
+      alert("Correo de recuperación enviado. Revisa tu bandeja de entrada o carpeta de spam.")
+      navigate("/login")
     } catch (err) {
-      let message = "Ocurrió un error. Intenta nuevamente.";
+      let message = "Ocurrió un error. Intenta nuevamente."
 
       switch (err.code) {
         case "auth/invalid-email":
-          message = "El correo no es válido.";
+          message = "El correo no es válido."
           break;
         case "auth/user-not-found":          
-          message = "Si el correo está registrado, recibirás un enlace.";
+          message = "Si el correo está registrado, recibirás un enlace."
           break;
         case "auth/too-many-requests":
-          message = "Demasiados intentos. Intenta más tarde.";
+          message = "Demasiados intentos. Intenta más tarde."
           break;
         default:
-          message = "Error al enviar el correo. Intenta nuevamente.";
+          message = "Error al enviar el correo. Intenta nuevamente."
       }
 
-      setError(message);
+      setError(message)
     }
   };
 
