@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-import { ChevronsLeft } from "lucide-react";
+import { ChevronsLeft, Mail } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../services/firebase";
@@ -54,7 +54,7 @@ const ForgotPassword = () => {
               <p className="text-center text-font fs-4">RECUPERAR CONTRASEÑA</p>
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
-                  Ingresa tu correo
+                  <Mail /> Ingresa tu correo
                 </label>
                 <input
                   type="email"
