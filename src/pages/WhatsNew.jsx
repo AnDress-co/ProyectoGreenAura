@@ -8,9 +8,9 @@ const WhatsNew = () => {
     <>
       <Navbar />
       {/*Este div coloca la imagen como brackground de todo*/}
-      <div className="general-background mt-3 mt-md-5 text-center text-white fs-5 fw-bold">
-        <div className="d-flex flex-wrap justify-content-center"></div>
-        <div className="container-fluid mt-2 mt-md-4 d-flex flex-wrap justify-content-center gap-2">
+      <div className="general-background mt-4 mt-md-5 text-center text-white fs-5 fw-bold">
+        <div className="d-flex flex-wrap justify-content-center mt-4 mt-md-4"></div>
+        <div className="container-fluid mt-2 mt-md-4 d-flex flex-wrap justify-content-center gap-3">
           <ProductCard
             title="Resina de Shilajit Himalaya"
             description="Recupera tu vitalidad. Potencia tu bienestar."

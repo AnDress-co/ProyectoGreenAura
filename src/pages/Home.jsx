@@ -5,8 +5,8 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="general-background text-center text-white fs-5 fw-bold py-3 py-md-5">
-        <div className="container-fluid mt-2 mt-md-4 d-flex flex-wrap justify-content-center gap-2">
+      <div className="general-background text-center text-white fs-5 fw-bold py-3 py-md-5 mt-5 mt-md-3">
+        <div className="container-fluid mt-2 mt-md-4 d-flex flex-wrap justify-content-center gap-3">
           <ProductCard
             title="Resina de Shilajit Himalaya"
             description="Recupera tu vitalidad. Potencia tu bienestar."            
