@@ -37,7 +37,7 @@ const ForgotPassword = () => {
 
       setError(message)
     }
-  };
+  }
 
   return (
     <>

@@ -41,7 +41,7 @@ const Login = () => {
       }
       setError(message);
     }
-  };
+  }
 
   return (
     <>
