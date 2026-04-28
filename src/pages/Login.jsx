@@ -18,7 +18,7 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password)
       setError("")
-      navigate("/dashboard")
+      navigate("/admin-dashboard")
     } catch (err) {
       let message = "Error al iniciar sesión."
 
