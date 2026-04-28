@@ -26,7 +26,7 @@ const AppRouter = () => {
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/whats-new' element={<WhatsNew />}/>
           <Route path='/admin-dashboard' element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}/>
-          <Route path='/dashboard-products' element={<ProtectedRoute><DashboardProducts /></ProtectedRoute>}/>
+          <Route path='/admin-products' element={<ProtectedRoute><DashboardProducts /></ProtectedRoute>}/>
           <Route path='/dashboard-whats-new' element={<ProtectedRoute><DashboardWhatsNew /></ProtectedRoute>}/>
 
           {/* Ruta para manejar error HTTP 404 */}

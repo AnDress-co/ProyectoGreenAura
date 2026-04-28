@@ -224,6 +224,16 @@
   font-weight: 600;
 }
 
+.bg-golden {
+  background-color: var(--color-dorado);
+}
+.text-crema {
+  color: var(--color-crema);
+}
+.admin-sidebar-footer {
+  border-color: rgba(197, 160, 89, 0.3) !important;
+}
+
 @media (max-width: 768px) {
   .admin-sidebar {
     width: 100%;
