@@ -1,13 +1,14 @@
 import { initializeApp } from "firebase/app"
 import { getAuth } from "firebase/auth"
 
+
 const firabaseConfig = {
-  apiKey: "AIzaSyBhsYhkhwlMQf8wyG1Kg0-Qj2YHIyR96wU",
-  authDomain: "greenaura-44405.firebaseapp.com",
-  projectId: "greenaura-44405",
-  storageBucket: "greenaura-44405.firebasestorage.app",
-  messagingSenderId: "728514165223",
-  appId: "1:728514165223:web:aae3026b9fc7718f886542"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 }
 
 const app = initializeApp(firabaseConfig)
