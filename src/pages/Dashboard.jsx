@@ -1,5 +1,5 @@
 import Navbar from '../components/Navbar';
-import { Search, GripVertical, Eye, EyeOff, Pencil, Trash2 } from 'lucide-react';
+import { Search, GripVertical, Eye, EyeOff, Pencil, Trash2, Plus } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -12,13 +12,15 @@ const Dashboard = () => {
   };
 
   const handleEditClick = () => {
-    navigate('/edit-product');
-    alert('Editar producto');
+    navigate('/edit-product');    
   };
 
-  const handleDeleteClick = () => {
-    navigate('/delete-product'); 
-    alert('Producto eliminado');
+  const handleAddClick = () => {
+    navigate('/add-product');    
+  };
+
+  const handleDeleteClick = () => {    
+    alert('Seguro que deseas eliminar este producto? Esta acción no se puede deshacer.');
   }
 
   return (
@@ -26,7 +28,7 @@ const Dashboard = () => {
       <Navbar />
       <div className="general-background py-5">
         <div className="philosophy-card container p-3 mt-5">
-          <h1 className='mt-2 text-font text-center'>ORDENAR PRODUCTOS EN EL PANEL PUBLIO</h1>
+          <h1 className='mt-2 text-font text-center'>GESTION DE PRODUCTOS</h1>
           <form className='mb-3 mt-4' onSubmit={(e) => e.preventDefault()}>
             <div className='d-flex flex-wrap justify-content-between align-items-center gap-3'>
               <div className='input-group' style={{ maxWidth: "350px" }}>
@@ -34,7 +36,7 @@ const Dashboard = () => {
                 <input type="text" className='form-control' placeholder="Buscar productos..." aria-label="Username" aria-describedby="basic-addon1"/>            
               </div>
               <div>
-                <button type="submit" className='btn custom-button'>GUARDAR CAMBIOS</button>
+                <button type="submit" className='btn custom-button' onClick={handleAddClick}><Plus size={20} /> AGREGAR PRODUCTO</button>
               </div>
             </div>
           </form>

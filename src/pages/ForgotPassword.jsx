@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar"
 import { ChevronsLeft, Mail } from "lucide-react"
 import { Link, useNavigate } from "react-router-dom"
 import { sendPasswordResetEmail } from "firebase/auth"
-import { auth } from "../services/firebase"
+import { auth } from "../firebase/config"
 import { useState } from "react"
 
 const ForgotPassword = () => {

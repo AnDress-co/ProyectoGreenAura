@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { CircleUserRound, SquareUserRound, UserX } from 'lucide-react'
 import { signOut } from "firebase/auth";
 
-import { auth } from "../services/firebase";
+import { auth } from "../firebase/config";
 import Logo from '../assets/logo.png'
 
 const Navbar = () => {
@@ -14,9 +14,7 @@ const Navbar = () => {
   };
 
   const navLinks = isLoggedIn ? [
-    { to: '/dashboard', label: 'Panel'},
-    { to: '/dashboard-products', label: 'Gestion de productos'},
-    { to: '/dashboard-whats-new', label: 'Gestion de promociones'},
+    { to: '/dashboard', label: 'Panel de productos'},  
   ] : [
     { to: '/',               label: 'Inicio'           },
     { to: '/our-philosophy', label: 'Nuestra Filosofía' },
