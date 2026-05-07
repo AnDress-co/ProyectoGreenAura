@@ -14,6 +14,7 @@ const AddProduct = () => {
           iconButton={<Save size={20} />}
           buttonTitle="AGREGAR PRODUCTO"
           onSubmit={createProduct}
+          route="/dashboard"
         />
       </div>
     </>

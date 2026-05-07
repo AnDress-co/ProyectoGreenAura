@@ -4,6 +4,7 @@ import { PencilLine, Save } from "lucide-react";
 import { updateProduct, getProductById } from "../services/products";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Loading from "../components/Loading";
 
 const EditProduct = () => {
   const { id } = useParams();
@@ -22,8 +23,8 @@ const EditProduct = () => {
     fetchData();
   }, [id]);
 
-  // 👇 evita render antes de tener datos
-  if (!product) return <p>Cargando...</p>;
+  // evita render antes de tener datos
+  if (!product) return <Loading />;
   return (
     <>
       <Navbar />

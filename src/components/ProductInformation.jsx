@@ -1,11 +1,12 @@
 import { Percent, ChevronsLeft, Plus, X} from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-
 import { uploadToCloudinary } from '../services/cloudinary';
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
-const ProductInformation = ({title, iconTitle, buttonTitle, iconButton, initialData = {}, onSubmit}) => {
+const ProductInformation = ({title, iconTitle, buttonTitle, iconButton, initialData = {}, onSubmit, route}) => {
+  const navigate = useNavigate();
   const [name, setName] = useState(initialData.name || '');
   const [description, setDescription] = useState(initialData.description || '');
   const [imageFile, setImageFile] = useState(null);
@@ -13,12 +14,11 @@ const ProductInformation = ({title, iconTitle, buttonTitle, iconButton, initialD
   const [status, setStatus] = useState(true);
   const [promotion, setPromotion] = useState(initialData.promotion || '');
   const [isPromotionActive, setIsPromotionActive] = useState(false);
-  const [processes, setProcesses] = useState([
-    initialData.processes || { id: 1, title: '', description: '' }
-  ]);
+  const [processes, setProcesses] = useState( initialData.processes?.length > 0 ? initialData.processes : [{ id: 1, title: '', description: '' }]);
   const imageRef = useRef();
   const videoRef = useRef();
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
+    
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ const ProductInformation = ({title, iconTitle, buttonTitle, iconButton, initialD
     try {
       setLoading(true);
 
-      // 🔥 subir archivos
+      // subir archivos a Cloudinary y obtener URLs
       const imageUrl = imageFile 
         ? await uploadToCloudinary(imageFile) 
         : null;
@@ -47,11 +47,12 @@ const ProductInformation = ({title, iconTitle, buttonTitle, iconButton, initialD
         imageUrl,
         videoUrl,
         status,
-        promotion: isPromotionActive ? promotion : null,
+        promotion: isPromotionActive ? promotion + "%" : null,
         processes
       };
 
       await onSubmit(newProduct);
+      await navigate(route);
 
       setName('');
       setDescription('');      
@@ -61,7 +62,7 @@ const ProductInformation = ({title, iconTitle, buttonTitle, iconButton, initialD
       imageRef.current.value = '';
       videoRef.current.value = '';
 
-      alert("Producto creado 🚀");
+      alert("Producto creado exitosamente");
     } catch (error) {
       console.error(error);
       alert("Error al crear producto");
