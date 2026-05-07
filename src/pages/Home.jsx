@@ -9,7 +9,7 @@ const Home = () => {
         <div className="container-fluid mt-2 mt-md-4 d-flex flex-wrap justify-content-center gap-3">
           <ProductCard
             title="Resina de Shilajit Himalaya"
-            description="Recupera tu vitalidad. Potencia tu bienestar."            
+            description="Recupera tu vitalidad. Potencia tu bienestar."
             image="https://thumbs.dreamstime.com/b/resina-shilajit-esencia-mineral-pura-en-un-entorno-natural-353430079.jpg"
             width={"100%"}
             link="/product"
@@ -17,7 +17,7 @@ const Home = () => {
 
           <ProductCard
             title="Aceite de Rosa Mosqueta"
-            description="Piel radiante y nutrición profunda."            
+            description="Piel radiante y nutrición profunda."
             image="https://acdn-us.mitiendanube.com/stores/002/834/934/products/aceite-mosqueta-15-8047c13f3ab90f0fb617462355796500-1024-1024.webp"
             width={"100%"}
             link="/product"
@@ -25,7 +25,7 @@ const Home = () => {
 
           <ProductCard
             title="Polvo de Reishi Adaptógeno"
-            description="Reduce el estrés y fortalece el sistema."            
+            description="Reduce el estrés y fortalece el sistema."
             image="https://funginatur.com/wp-content/uploads/2025/07/DSC0211-1-300x200.jpg"
             width={"100%"}
             link="/product"

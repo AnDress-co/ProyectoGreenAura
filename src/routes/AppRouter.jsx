@@ -10,8 +10,8 @@ import ForgotPassword from '../pages/ForgotPassword'
 import ErrorPage from '../components/ErrorPage'
 import WhatsNew from '../pages/WhatsNew'
 import Dashboard from '../pages/Dashboard'
-import DashboardProducts from '../pages/DashboardProducts'
-import DashboardWhatsNew from '../pages/DashboardWhatsNew'
+import EditProduct from '../pages/EditProduct'
+import AddProduct from '../pages/AddProduct'
 
 const AppRouter = () => {  
 
@@ -25,8 +25,8 @@ const AppRouter = () => {
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/whats-new' element={<WhatsNew />}/>
           <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>}/>
-          <Route path='/dashboard-products' element={<ProtectedRoute><DashboardProducts /></ProtectedRoute>}/>
-          <Route path='/dashboard-whats-new' element={<ProtectedRoute><DashboardWhatsNew /></ProtectedRoute>}/>
+          <Route path='/edit-product/:id' element={<ProtectedRoute><EditProduct /></ProtectedRoute>}/>
+          <Route path='/add-product' element={<ProtectedRoute><AddProduct /></ProtectedRoute>}/>
 
           {/* Ruta para manejar error HTTP 404 */}
           <Route path="*" element=
