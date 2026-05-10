@@ -10,6 +10,8 @@ import ForgotPassword from '../pages/ForgotPassword'
 import ErrorPage from '../components/ErrorPage'
 import WhatsNew from '../pages/WhatsNew'
 import Dashboard from '../pages/Dashboard'
+import ProductPage from "../pages/ProductPage"
+
 import EditProduct from '../pages/EditProduct'
 import AddProduct from '../pages/AddProduct'
 
@@ -24,6 +26,9 @@ const AppRouter = () => {
           <Route path='/login' element={<Login />} />
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/whats-new' element={<WhatsNew />}/>
+
+          <Route path="/product/:id" element={<ProductPage />} />
+          
           <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>}/>
           <Route path='/edit-product/:id' element={<ProtectedRoute><EditProduct /></ProtectedRoute>}/>
           <Route path='/add-product' element={<ProtectedRoute><AddProduct /></ProtectedRoute>}/>
