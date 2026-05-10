@@ -1,16 +1,20 @@
 import { Link, useLocation } from 'react-router-dom'
-import { CircleUserRound } from 'lucide-react'
+import { CircleUserRound, SquareUserRound, UserX } from 'lucide-react'
+import { signOut } from "firebase/auth";
 
+import { auth } from "../firebase/config";
 import Logo from '../assets/logo.png'
 
 const Navbar = () => {
   const { pathname } = useLocation();
   const isLoggedIn = pathname.startsWith('/dashboard');
 
+  const handleLogout = async () => {
+    await signOut(auth);    
+  };
+
   const navLinks = isLoggedIn ? [
-    { to: '/dashboard', label: 'Panel'},
-    { to: '/dashboard-products', label: 'Gestion de productos'},
-    { to: '/dashboard-whats-new', label: 'Gestion de promociones'},
+    { to: '/dashboard', label: 'Panel de productos'},  
   ] : [
     { to: '/',               label: 'Inicio'           },
     { to: '/our-philosophy', label: 'Nuestra Filosofía' },
@@ -42,10 +46,25 @@ const Navbar = () => {
           </div>
           <div className='navbar-nav'>
             {rightLinks.map(({to, label, icon: Icon}) => (
+              label === 'Iniciar Sesión' ? 
               <Link className='nav-link d-flex align-items-center' key={to} to={to}>
                 {Icon && <Icon />}
                 {label}
-              </Link>
+              </Link> :
+              <li className='nav-item dropdown m-2 me-5' key={to}>
+                <Link className='nav-link dropdown-toggle d-flex align-items-center' to={to} role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {Icon && <Icon />}
+                  {label}
+                </Link>
+                <ul className='dropdown-menu'>
+                  <li>
+                    <Link className='dropdown-item fw-medium' to='/profile'>{Icon && <SquareUserRound />} Mi perfil</Link>
+                  </li>
+                  <li>
+                    <Link className='dropdown-item fw-medium' to='/login' onClick={handleLogout}>{Icon && <UserX />} Cerrar sesión</Link>
+                  </li>
+                </ul>
+              </li>             
             ))}
           </div>
         </div> 

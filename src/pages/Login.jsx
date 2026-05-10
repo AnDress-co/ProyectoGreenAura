@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { Mail, LockKeyhole } from "lucide-react"
 import { useState } from "react"
 import { signInWithEmailAndPassword } from "firebase/auth"
-import { auth } from "../services/firebase"
+import { auth } from "../firebase/config"
 import { useNavigate } from "react-router-dom"
 import Navbar from "../components/Navbar"
 

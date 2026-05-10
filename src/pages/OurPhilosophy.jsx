@@ -5,9 +5,7 @@ const OurPhilosophy = () => {
   return (
     <>
       <Navbar />
-      <div 
-        className="general-background d-flex align-items-center justify-content-center py-5"        
-      >
+      <div className="general-background d-flex align-items-center justify-content-center py-5">
         <div className="philosophy-card container p-5 mt-5">
 
           <h1 className="philosophy-title text-center mb-4 mt-5">Nuestra Filosofía</h1>
