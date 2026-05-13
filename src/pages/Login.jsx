@@ -76,7 +76,7 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              <div id="alert" className="form-text text-danger p-1 fw-semibold">
+              <div id="alert" className="form-text text-warning p-1 fw-semibold">
                 {error}
               </div>
               <div className="d-flex justify-content-end">
