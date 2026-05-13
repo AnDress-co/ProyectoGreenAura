@@ -14,6 +14,7 @@ import ProductPage from "../pages/ProductPage"
 
 import EditProduct from '../pages/EditProduct'
 import AddProduct from '../pages/AddProduct'
+import AccountPage from '../pages/AccountPage'
 
 const AppRouter = () => {  
 
@@ -32,6 +33,7 @@ const AppRouter = () => {
           <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>}/>
           <Route path='/edit-product/:id' element={<ProtectedRoute><EditProduct /></ProtectedRoute>}/>
           <Route path='/add-product' element={<ProtectedRoute><AddProduct /></ProtectedRoute>}/>
+          <Route path='/profile' element={<ProtectedRoute><AccountPage /></ProtectedRoute>} />
 
           {/* Ruta para manejar error HTTP 404 */}
           <Route path="*" element=
