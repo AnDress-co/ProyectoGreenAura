@@ -48,12 +48,12 @@ html, body, #root {
   display:flex;
   flex-direction:column;
   justify-content:center;
-
+  
   padding-left:8%;
   padding-right:6%;
 
   background-color:#1f7a5a;
-  color:#dcde6e;
+  color:var(--color-dorado);
 }
 
 .product-text h1 {
@@ -73,9 +73,9 @@ html, body, #root {
 
 .product-image {
   position: relative;
-  flex: 1;
-  
-  display: flex;
+  overflow: hidden; 
+  flex: 1;  
+  display: flex;  
 }
 
 .product-image img{
@@ -108,23 +108,78 @@ html, body, #root {
   pointer-events:none;
 }
 
+.discount-badge {
+  position: absolute;
+
+  top: 100px;
+  right: 20px;
+
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #d6d46b,
+    #bfb74b
+  );
+
+  color: #194d38;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  font-size: 1.1rem;
+  font-weight: 800;
+
+  z-index: 5;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+  animation: pulseDiscount 2s infinite;
+}
+
+@keyframes pulseDiscount {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
 /*WHATSSAP BUTTON*/
 
 .whatsapp-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
 
-  padding: 14px 26px;
+  width: fit-content;
 
-  background: linear-gradient(135deg, #1d7a46, #2fa866);
-  border-radius: 40px;
+  padding: 10px 20px;
 
+  background: linear-gradient(135deg, #023116, #2fa866);
+  border-radius: 30px;
+
+  font-size: 19px;
   font-weight: 600;
-  color: #dcde6e;
+
   text-decoration: none;
 
   transition: 0.25s;
+  border: none;
 }
 
 .whatsapp-btn:hover {
@@ -132,6 +187,20 @@ html, body, #root {
   box-shadow: 0 8px 25px rgba(255, 255, 118, 0.171);
 }
 
+/* WHATSAPP ICON */
+
+.send-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* CEL */
+@media (max-width: 768px) {
+  .send-icon {
+    width: 80px;
+    height: 40px;
+  }
+}
 
 /* BOTON PLAY SOBRE IMAGEN */
 

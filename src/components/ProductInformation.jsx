@@ -13,6 +13,7 @@ const ProductInformation = ({title, iconTitle, buttonTitle, iconButton, initialD
   const [videoFile, setVideoFile] = useState(null);
   const [status, setStatus] = useState(true);
   const [promotion, setPromotion] = useState(initialData.promotion || '');
+  const [discount, setDiscount] = useState(false);
   const [isPromotionActive, setIsPromotionActive] = useState(false);
   const [processes, setProcesses] = useState( initialData.processes?.length > 0 ? initialData.processes : [{ id: 1, title: '', description: '' }]);
   const imageRef = useRef();
@@ -48,6 +49,7 @@ const ProductInformation = ({title, iconTitle, buttonTitle, iconButton, initialD
         videoUrl,
         status,
         promotion: isPromotionActive ? promotion + "%" : null,
+        discount,
         processes
       };
 
@@ -107,7 +109,7 @@ const ProductInformation = ({title, iconTitle, buttonTitle, iconButton, initialD
               onChange={(e) => {
                 const checked = e.target.checked;
                 setIsPromotionActive(checked);
-
+                setDiscount(checked);
                 if (!checked) {
                   setPromotion('');
                 }
