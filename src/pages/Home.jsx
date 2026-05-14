@@ -1,47 +1,82 @@
-import Navbar from "../components/Navbar"
-import ProductCard from "../components/ProductCard"
+import Navbar from "../components/Navbar";
+import ProductCard from "../components/ProductCard";
+
+import { useEffect, useState } from "react";
+
+import { getProducts } from "../services/products";
 
 const Home = () => {
+
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+
+    const fetchProducts = async () => {
+
+      try {
+
+        const data = await getProducts();
+
+        // SOLO PRODUCTOS ACTIVOS
+        const activeProducts = data.filter(
+          (product) => product.status === true
+        );
+
+        setProducts(activeProducts);
+
+      } catch (error) {
+
+        console.error(
+          "Error cargando productos:",
+          error
+        );
+
+      } finally {
+
+        setLoading(false);
+
+      }
+    };
+
+    fetchProducts();
+
+  }, []);
+
   return (
     <>
       <Navbar />
+
       <div className="general-background text-center text-white fs-5 fw-bold py-3 py-md-5 mt-5 mt-md-3">
+
         <div className="container-fluid mt-2 mt-md-4 d-flex flex-wrap justify-content-center gap-3">
-          <ProductCard
-            title="Resina de Shilajit Himalaya"
-            description="Recupera tu vitalidad. Potencia tu bienestar."
-            image="https://thumbs.dreamstime.com/b/resina-shilajit-esencia-mineral-pura-en-un-entorno-natural-353430079.jpg"
-            width={"100%"}
-            link="/product"
-          />
 
-          <ProductCard
-            title="Aceite de Rosa Mosqueta"
-            description="Piel radiante y nutrición profunda."
-            image="https://acdn-us.mitiendanube.com/stores/002/834/934/products/aceite-mosqueta-15-8047c13f3ab90f0fb617462355796500-1024-1024.webp"
-            width={"100%"}
-            link="/product"
-          />
+          {loading && (
+            <p>Cargando productos...</p>
+          )}
 
-          <ProductCard
-            title="Polvo de Reishi Adaptógeno"
-            description="Reduce el estrés y fortalece el sistema."
-            image="https://funginatur.com/wp-content/uploads/2025/07/DSC0211-1-300x200.jpg"
-            width={"100%"}
-            link="/product"
-          />
+          {!loading && products.length === 0 && (
+            <p>No hay productos disponibles.</p>
+          )}
 
-          <ProductCard
-            title="Set de Matcha Ceremonial"
-            description="Calma y concentración."            
-            image="https://teaandleaves.co.uk/cdn/shop/files/FullSizeRender_1a139673-a0d0-42e4-80d0-55de61358150.heic?v=1755605067&width=1946"
-            width={"100%"}
-            link="/product"
-          />
-        </div>        
-      </div>      
+          {products.map((product) => (
+
+            <ProductCard
+              key={product.id}
+              title={product.name}
+              description={product.description}
+              image={product.imageUrl}
+              width={"100%"}
+              link={`/product/${product.id}`}
+            />
+
+          ))}
+
+        </div>
+
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
