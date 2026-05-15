@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom"
 //Lo que recibe los productos (Dependiendo de los que crees)
 const ProductCard = ({ title, description, discount, image, width, link }) => {

@@ -48,33 +48,55 @@ const WhatsNew = () => {
     <>
       <Navbar />
 
-      <div className="general-background mt-4 mt-md-5 text-center text-white fs-5 fw-bold">
+      <div className="general-background mt-4 mt-md-5 text-white min-vh-100 py-4">
 
-        <div className="container-fluid mt-2 mt-md-4 d-flex flex-wrap justify-content-center gap-3">
+        <div className="container">
 
           {loading && (
-            <p>Cargando promociones...</p>
+            <p className="text-center fs-5 fw-bold">
+              Cargando promociones...
+            </p>
           )}
 
           {!loading && products.length === 0 && (
-            <p>No hay promociones activas.</p>
+            <p className="text-center fs-5 fw-bold">
+              No hay promociones activas.
+            </p>
           )}
 
-          {products.map((product) => (
+          <div className="row">
 
-            <ProductCard
-              key={product.id}
-              title={product.name}
-              description={product.description}
-              discount={product.discount ? product.promotion : null}
-              image={product.imageUrl}
-              width={"100%"}
-              link={`/product/${product.id}`}
-            />
+            {products.map((product) => (
 
-          ))}
+              <div
+                key={product.id}
+                className="col-12 col-md-6 mb-4 d-flex"
+              >
+
+                <div className="w-100">
+
+                  <ProductCard
+                    title={product.name}
+                    description={product.description}
+                    discount={
+                      product.discount
+                        ? product.promotion
+                        : null
+                    }
+                    image={product.imageUrl}
+                    link={`/product/${product.id}`}
+                  />
+
+                </div>
+
+              </div>
+
+            ))}
+
+          </div>
 
         </div>
+
       </div>
     </>
   );
