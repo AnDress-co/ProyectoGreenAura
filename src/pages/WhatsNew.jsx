@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { getProducts } from "../services/products";
 
-const Home = () => {
+const WhatsNew = () => {
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,16 +18,18 @@ const Home = () => {
 
         const data = await getProducts();
 
-        const activeProducts = data.filter(
-          (product) => product.status === true
+        const promotionProducts = data.filter(
+          (product) =>
+            product.status === true &&
+            product.discount === true
         );
 
-        setProducts(activeProducts);
+        setProducts(promotionProducts);
 
       } catch (error) {
 
         console.error(
-          "Error cargando productos:",
+          "Error cargando promociones:",
           error
         );
 
@@ -46,19 +48,19 @@ const Home = () => {
     <>
       <Navbar />
 
-      <div className="general-background text-white py-3 py-md-5 mt-5 mt-md-3 min-vh-100">
+      <div className="general-background mt-4 mt-md-5 text-white min-vh-100 py-4">
 
         <div className="container">
 
           {loading && (
             <p className="text-center fs-5 fw-bold">
-              Cargando productos...
+              Cargando promociones...
             </p>
           )}
 
           {!loading && products.length === 0 && (
             <p className="text-center fs-5 fw-bold">
-              No hay productos disponibles.
+              No hay promociones activas.
             </p>
           )}
 
@@ -68,7 +70,7 @@ const Home = () => {
 
               <div
                 key={product.id}
-                className="col-12 col-md-6 mb-4 d-flex" 
+                className="col-12 col-md-6 mb-4 d-flex"
               >
 
                 <div className="w-100">
@@ -76,6 +78,11 @@ const Home = () => {
                   <ProductCard
                     title={product.name}
                     description={product.description}
+                    discount={
+                      product.discount
+                        ? product.promotion
+                        : null
+                    }
                     image={product.imageUrl}
                     link={`/product/${product.id}`}
                   />
@@ -95,4 +102,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default WhatsNew;

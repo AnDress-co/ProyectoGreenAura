@@ -1,82 +1,497 @@
-.text-font { /*Tipo de fuente para titulos*/
-  color: #C5A059;
-  font-family: Georgia, serif; 
+body{
+  margin:0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+/*Products*/
+
+/*PAGE FADE*/
+
+.page-container{
+  transition: opacity 0.6s ease;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.fade-out{
+  opacity:0;
+}
+
+.fade-in{
+  opacity:1;
+}
+
+.product-hero{
+  flex:1;
+  display:flex;
+  align-items:stretch;
+
+  background: linear-gradient(
+    90deg,
+    #0b0f0c 0%,
+    #0b0f0c 45%,
+    rgba(11, 15, 12, 0.8) 60%,
+    rgba(11, 15, 12, 0.2) 75%,
+    transparent 100%
+  );
+}
+
+/*TEXT*/
+
+.product-text{
+  flex:1;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  
+  padding-left:8%;
+  padding-right:6%;
+
+  background-color:#1f7a5a;
+  color:var(--color-dorado);
+}
+
+.product-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.product-text p {
+  font-size: 1.1rem;
+  color: #dcde6e;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/*IMAGE PRODUCT*/
+
+.product-image {
+  position: relative;
+  overflow: hidden; 
+  flex: 1;  
+  display: flex;  
+}
+
+.product-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position:relative;
+  z-index: 1;
+}
+
+.product-image::before{
+  content:"";
+
+  position:absolute;
+  left:0;
+  top:0;
+
+  width:40%;
+  height:100%;
+
+  background:linear-gradient(
+    to right,
+    #1f7a5a 0%,
+    rgba(31,122,90,0.8) 40%,
+    rgba(31,122,90,0.2) 70%,
+    transparent 100%
+  );
+
+  z-index:2;
+  pointer-events:none;
+}
+
+.discount-badge {
+  position: absolute;
+
+  top: 100px;
+  right: 20px;
+
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #d6d46b,
+    #bfb74b
+  );
+
+  color: #194d38;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  font-size: 1.1rem;
+  font-weight: 800;
+
+  z-index: 5;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+  animation: pulseDiscount 2s infinite;
+}
+
+@keyframes pulseDiscount {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+/*WHATSSAP BUTTON*/
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+
+  width: fit-content;
+
+  padding: 10px 20px;
+
+  background: linear-gradient(135deg, #023116, #2fa866);
+  border-radius: 30px;
+
+  font-size: 19px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: 0.25s;
+  border: none;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 118, 0.171);
+}
+
+/* WHATSAPP ICON */
+
+.send-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* CEL */
+@media (max-width: 768px) {
+  .send-icon {
+    width: 80px;
+    height: 40px;
+  }
+}
+
+/* BOTON PLAY SOBRE IMAGEN */
+
+.play-button {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 70px;
+  height: 70px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+
+  z-index:3;
+}
+
+.play-button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+/*VIDEO FULLSCREEN*/ 
+
+.video-fullscreen {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+
+  animation:fadeVideo 0.6s ease;
+}
+
+@keyframes fadeVideo {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+.video-fullscreen video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* PRODUCT-CARD */
+
+.product-link{
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card{
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover{
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+.product-card-img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  aspect-ratio: 260 / 280;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Responsividad para ProductCard */
+@media (max-width: 768px) {
+  .product-card {
+    width: 100% !important;
+    min-width: 280px;
+    max-width: 400px;
+    margin: 0.5rem auto !important;
+  }
+  
+  .product-card-img {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-card {
+    width: 100% !important;
+    max-width: 100%;
+    margin: 0.5rem auto !important;
+    padding: 1rem !important;
+  }
+  
+  .product-card h5 {
+    font-size: 1.1rem;
+  }
+  
+  .product-card p {
+    font-size: 0.95rem;
+  }
+  
+  .product-card-img {
+    max-width: 150px;
+  }
+}
+
+:root {
+  --color-dorado: #C5A059;
+  --color-crema: #F5F5DC;
+  --color-verde: #304D27;
+  --font-serif: Georgia, serif;
+}
+
+/*  Navbar */
+.color-navbar {
+  background-color: var(--color-crema);
+}
+
+/*  Tipografía */
+.text-font {
+  color: var(--color-dorado);
+  font-family: var(--font-serif);
 }
 
 .custom-button {
-  background-color: #C5A059;
-  color: #304D27;
-  font-family: Georgia, serif;  
+  background-color: var(--color-dorado);
+  color: var(--color-verde);
+  font-family: var(--font-serif);
 }
 
-/*Navbar*/
-.color-navbar {
-    background-color: #F0F0D5;
+/* Fondo con desenfoque reutilizable */
+.bg-blur-wrapper {
+  position: relative;
+  min-height: 100vh;
 }
 
-/*Login*/
+.bg-blur-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  z-index: 0;
+}
+
+.bg-blur-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Login */
 .background-login {
   background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776484627/backgroundLogin_smsdap.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100vh;
 }
 
-.color-login {
-  background-color: #304D27;
-}
-
-/*Nuestra Filosofía*/
-.filosofia-wrapper {
+.general-background{  
+  position: relative;
   min-height: 100vh;
-  background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776485466/BackGroundPhilosophy_zho6cr.png');
+  width: 100%;
+  background-image: url('https://res.cloudinary.com/dqf8a6brf/image/upload/v1776816236/BackgroudHome_pwskil.png');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
 }
 
-.filosofia-card {
+@media (max-width: 768px) {
+  .general-background {
+    background-attachment: scroll;
+    padding: 1rem 0;
+  }
+}
+
+.background-login::before,
+.general-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+
+.background-login > *,
+.general-background > * {
+  position: relative;
+  z-index: 1;
+}
+
+.color-login {
+  background-color: var(--color-verde);
+}
+
+/* Nuestra Filosofía */
+.philosophy-card {
   background-color: rgba(30, 70, 32, 0.88);
-  border: 1px solid #C5A059;
+  border: 1px solid var(--color-dorado);
   border-radius: 16px;
-  color: #F5F5DC;
+  color: var(--color-crema);
 }
 
-.filosofia-titulo {
-  font-size: 2.8rem;
-  color: #C5A059;
-  font-family: Georgia, serif;
+.philosophy-title,
+.philosophy-subtitle,
+.pilar-title,
+.mv-title {
+  color: var(--color-dorado);
+  font-family: var(--font-serif);
 }
 
-.filosofia-subtitulo {
-  font-size: 1.5rem;
-  color: #C5A059;
-  font-family: Georgia, serif;
-}
-
-.filosofia-descripcion {
+.philosophy-description {
   max-width: 700px;
   line-height: 1.7;
 }
 
 .pilar-card {
   background-color: rgba(255, 255, 255, 0.07);
-  border: 1px solid #C5A059;
+  border: 1px solid var(--color-dorado);
   border-radius: 12px;
 }
 
-.pilar-titulo {
-  color: #C5A059;
-  font-family: Georgia, serif;
-  font-size: 1.1rem;
+/* ===== Mi Cuenta ===== */
+.account-card {
+  border-color: var(--color-dorado);
+  max-width: 520px;
 }
 
-.pilar-icono {
-  font-size: 1.5rem;
+.account-avatar {
+  width: 96px;
+  height: 96px;
+  border-color: var(--color-dorado) !important;
+  background-color: rgba(197, 160, 89, 0.1);
 }
 
-.mv-titulo {
-  color: #C5A059;
-  font-family: Georgia, serif;
-  font-size: 1.2rem;
+.account-role {
+  background-color: var(--color-verde);
+  color: var(--color-crema);
+  font-family: var(--font-serif);
+}
+
+.account-value {
+  color: var(--color-verde);
+  font-family: var(--font-serif);
+}
+
+.account-input:focus {
+  border-color: var(--color-dorado);
+  box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.3);
+}
+
+.account-wrapper {
+  padding-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .account-wrapper {
+    padding-top: 80px;
+  }
 }
