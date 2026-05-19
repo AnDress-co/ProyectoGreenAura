@@ -4,9 +4,11 @@ import { useState } from 'react'
 import { uploadToCloudinary } from '../services/cloudinary';
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from '../context/AuthContext';
 
 const ProductInformation = ({title, iconTitle, buttonTitle, iconButton, initialData = {}, onSubmit, route}) => {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [name, setName] = useState(initialData.name || '');
   const [description, setDescription] = useState(initialData.description || '');
   const [imageFile, setImageFile] = useState(null);
@@ -32,16 +34,19 @@ const ProductInformation = ({title, iconTitle, buttonTitle, iconButton, initialD
     try {
       setLoading(true);
 
-      // subir archivos a Cloudinary y obtener URLs
+      // Detectar si es creación o edición
+      const isEditing = initialData?.id;
+
+      // Subir archivos a Cloudinary y obtener URLs
+      // Si no hay nuevo archivo, usar el anterior (en edición)
       const imageUrl = imageFile 
         ? await uploadToCloudinary(imageFile) 
-        : null;
+        : (isEditing ? initialData.imageUrl : null);
 
       const videoUrl = videoFile 
         ? await uploadToCloudinary(videoFile) 
-        : null;
+        : (isEditing ? initialData.videoUrl : null);
 
-      
       const newProduct = {
         name,
         description,
@@ -53,7 +58,13 @@ const ProductInformation = ({title, iconTitle, buttonTitle, iconButton, initialD
         processes
       };
 
-      await onSubmit(newProduct);
+      // Pasar userId solo al crear (no al editar)
+      if (isEditing) {
+        await onSubmit(newProduct);
+      } else {
+        await onSubmit(newProduct, user?.uid);
+      }
+      
       await navigate(route);
 
       setName('');
@@ -64,10 +75,10 @@ const ProductInformation = ({title, iconTitle, buttonTitle, iconButton, initialD
       imageRef.current.value = '';
       videoRef.current.value = '';
 
-      alert("Producto creado exitosamente");
+      alert("Tarea finalizada con éxito");
     } catch (error) {
       console.error(error);
-      alert("Error al crear producto");
+      alert("Error al realizar la tarea. Intenta de nuevo.");
     } finally {
       setLoading(false);
     }

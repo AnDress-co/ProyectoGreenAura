@@ -2,7 +2,7 @@ import { useState } from "react"
 import { CircleUserRound, Pencil, Check, X } from "lucide-react"
 import Navbar from "../components/Navbar"
 import PageTransition from "../components/PageTransition"
-import useProfile from "../hooks/useProfile"
+import useProfile from "../services/useProfile"
 
 const AccountPage = () => {
   const { profile, updating, error, success, updateDisplayName, updatePhone } = useProfile()

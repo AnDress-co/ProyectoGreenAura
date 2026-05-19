@@ -35,6 +35,7 @@ const EditProduct = () => {
           iconButton={<Save size={20} />}
           buttonTitle="GUARDAR CAMBIOS"
           initialData={product}
+          route="/dashboard"
           onSubmit={(data) => updateProduct(product.id, data)}
         />
       </div>

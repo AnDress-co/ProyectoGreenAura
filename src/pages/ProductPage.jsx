@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getProductById } from "../services/products";
+import { getProductById, getProductOwnerPhone } from "../services/products";
 import { PlayCircle, Send } from "lucide-react";
 import Navbar from "../components/Navbar";
+import Loading from "../components/Loading";
 
 const ProductPage = () => {
   const [showVideo, setShowVideo] = useState(false);
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [ownerPhone, setOwnerPhone] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -16,6 +18,10 @@ const ProductPage = () => {
       try {
         const data = await getProductById(id);
         setProduct(data);
+        
+        // Obtener teléfono del dueño del producto
+        const phone = await getProductOwnerPhone(id);
+        setOwnerPhone(phone);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -25,7 +31,7 @@ const ProductPage = () => {
     loadProduct();
   }, [id]);
 
-  if (loading) return <div>Cargando producto...</div>;
+  if (loading) return ;
   if (error) return <div>Error: {error}</div>;
 
   return (
@@ -105,7 +111,15 @@ const ProductPage = () => {
             <button
               className="text-font whatsapp-btn mt-3"
               style={{ marginBottom: "8%" }}
-              onClick={() => window.open("https://wa.me/1234567890", "_blank")}
+              onClick={() => {
+                const phoneNumber = ownerPhone;
+                if (phoneNumber) {
+                  const whatsappUrl = `https://wa.me/+57${phoneNumber}`;
+                  window.open(whatsappUrl, "_blank");
+                } else {
+                  alert("No hay teléfono disponible para contactar al asesor.");
+                }
+              }}
             >
               Recibe asesoría personalizada{" "}
               <Send className="send-icon" size={30} />

@@ -3,8 +3,12 @@ import { collection, doc, addDoc, getDocs, getDoc, updateDoc, deleteDoc } from "
 
 const productsCollection = collection(db, "products");
 
-export const createProduct = async (product) => {
-  return await addDoc(productsCollection, product);
+export const createProduct = async (product, userId) => {
+  return await addDoc(productsCollection, {
+    ...product,
+    userId,
+    createdAt: new Date()
+  });
 };
 
 export const getProducts = async () => {
@@ -28,6 +32,33 @@ export const getProductById = async (id) => {
     id: snapshot.id,
     ...snapshot.data()
   };
+};
+
+// Obtener el teléfono del dueño del producto
+export const getProductOwnerPhone = async (productId) => {
+  try {
+    const product = await getProductById(productId);
+    
+    if (!product.userId) {
+      console.warn("⚠️ El producto no tiene userId asociado");
+      return null;
+    }
+
+    const userRef = doc(db, "users", product.userId);
+    const userSnap = await getDoc(userRef);
+
+    if (userSnap.exists()) {
+      const phone = userSnap.data().phone;
+      console.log("✅ Teléfono del dueño:", phone);
+      return phone;
+    } else {
+      console.warn("⚠️ Usuario del producto no encontrado");
+      return null;
+    }
+  } catch (err) {
+    console.error("❌ Error al obtener teléfono del dueño:", err);
+    return null;
+  }
 };
 
 export const updateProductStatus = async (id, status) => {
